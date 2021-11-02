@@ -1,20 +1,24 @@
-import React from "react";
+import React, { Fragment } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-} from "react-router-dom";
-import Home from "./Pages/Home";
+  Redirect,
+} from 'react-router-dom';
+import { BearList, Home } from './Pages';
 // import ReactGA from "react-ga";
 
 const Routes = () => {
-
   return (
-    <Router>
+    <Fragment>
+      <Router>
         <Switch>
           <Route path="/home" component={Home} />
+          <Route path="/bearList" component={BearList} />
+          <Redirect path="*" to="/home" />
         </Switch>
-    </Router>
+      </Router>
+    </Fragment>
   );
 };
 
