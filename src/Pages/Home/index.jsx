@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Header } from '../components';
 import { Main } from '../../styles/style';
+import { connect } from 'react-redux';
+import { actions as accessActions } from '../..//Modules/access';
 
-const Home = ({ location }) => {
+const Home = ({ location, access, setAccess }) => {
+  useEffect(() => {
+    setAccess(true);
+  });
   return (
     <Main.Container>
       <Header pathname={location.pathname} />
@@ -27,4 +32,6 @@ const Home = ({ location }) => {
   );
 };
 
-export default Home;
+const mapStateToProps = state => ({ access: state.access.access });
+
+export default connect(mapStateToProps, accessActions)(Home);
