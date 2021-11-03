@@ -1,1 +1,1 @@
-export { default as bear } from './bear';
+export { default as columns } from './column';

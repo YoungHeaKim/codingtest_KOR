@@ -1,49 +1,10 @@
 import React from 'react';
 import { Header } from '../components';
-import styled from 'styled-components';
-
-const Main = {
-  Wrapper: styled.div`
-    max-width: 1440px;
-    margin: auto;
-    padding: 30px;
-    justify-content: center;
-  `,
-  Head: styled.div`
-    display: flex;
-    font-size: 1.5rem;
-    justify-content: center;
-    font-weight: bolder;
-  `,
-  Lists: styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-  `,
-
-  Links: styled.a`
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 5px;
-    background-color: rgb(150, 150, 150);
-    color: white;
-    padding: 0 10px;
-    margin-left: 5px;
-
-    &:hover {
-      color: black;
-      background-color: rgba(238, 238, 240, 0.7);
-    }
-  `,
-};
+import { Main } from '../../styles/style';
 
 const Home = ({ location }) => {
   return (
-    <div>
+    <Main.Container>
       <Header pathname={location.pathname} />
       <Main.Wrapper>
         <Main.Head>
@@ -62,7 +23,7 @@ const Home = ({ location }) => {
           </Main.Links>
         </Main.Lists>
       </Main.Wrapper>
-    </div>
+    </Main.Container>
   );
 };
 

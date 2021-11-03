@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,10 +7,12 @@ import {
 } from 'react-router-dom';
 import { BearList, Home } from './Pages';
 // import ReactGA from "react-ga";
+import { ThemeProvider } from 'styled-components';
+import { defalutStyle } from './styles';
 
 const Routes = () => {
   return (
-    <Fragment>
+    <ThemeProvider theme={defalutStyle}>
       <Router>
         <Switch>
           <Route path="/home" component={Home} />
@@ -18,7 +20,7 @@ const Routes = () => {
           <Redirect path="*" to="/home" />
         </Switch>
       </Router>
-    </Fragment>
+    </ThemeProvider>
   );
 };
 
